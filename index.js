@@ -11,7 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 const newMember = [];
-
+//asking the generic questions for all roles
 const questions = async () => {
   return inquirer.prompt([
     {
@@ -37,10 +37,10 @@ const questions = async () => {
     },
   ]);
 };
-
+//These are the questions for specific roles. depending on what the users chooses 
 async function promptQuestions() {
   const answers = await questions();
-
+  //If user selects manager, ask for their office number
   if (answers.role === "Manager") {
     const managerAns = await inquirer.prompt([
       {
@@ -57,6 +57,7 @@ async function promptQuestions() {
       managerAns.officeNumber
     );
     newMember.push(newManager);
+    //if engineer is selected then ask for their github username
   } else if (answers.role === "Engineer") {
     const githubAns = await inquirer.prompt([
       {
@@ -72,6 +73,7 @@ async function promptQuestions() {
       githubAns.github
     );
     newMember.push(newEngineer);
+    //If intern is selected then ask what school they go to
   } else if (answers.role === "Intern") {
     const internAns = await inquirer.prompt([
       {
@@ -89,7 +91,7 @@ async function promptQuestions() {
     );
     newMember.push(newIntern);
   }
-
+//if the user wants to continue or create the html file.
   const newMemberAns = await inquirer.prompt([
     {
       type: "list",
@@ -98,13 +100,13 @@ async function promptQuestions() {
       choices: ["Add new member", "Create team!"],
     },
   ]);
-
+//keep asking the questions one the user selects "add new member"
   if (newMemberAns.addMember === "Add new member") {
     return promptQuestions();
   }
   return createTeam();
 }
-
+//Writing to the file so that the user can see the output
 function createTeam() {
   console.log("New team member");
   fs.writeFileSync(outputPath, render(newMember), "utf-8");
