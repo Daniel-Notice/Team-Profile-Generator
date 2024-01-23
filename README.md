@@ -2,7 +2,6 @@
 
 ## Description
 
-https://daniel-notice.github.io/Bootstrap-Portfolio/
 
 The Team Profile Generator is a command-line application that allows users to input information about team members, including Managers, Engineers, and Interns. The application utilizes the Inquirer library to prompt users for details and generates a team.html file based on the provided information.
 ## Table of Contents
