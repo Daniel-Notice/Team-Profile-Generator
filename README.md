@@ -20,9 +20,9 @@ To install the Team Profile Generator, follow these steps:
    git clone https://github.com/your-username/team-profile-generator.git
 
 
-2.cd team-profile-generator
+2. cd team-profile-generator
 
-3.npm install
+3. npm install
 
 
 ## Usage
