@@ -41,7 +41,8 @@ To run the application, follow these steps:
  
 6. Once done, a team.html file will be generated in the output directory.
 
-![sc](https://github.com/Daniel-Notice/Bootstrap-Portfolio/assets/144740252/0aeb2c73-6464-4609-a17a-91bb4872e53a)
+![ss](https://github.com/Daniel-Notice/Team-Profile-Generator/assets/144740252/0eb46f9a-36d2-4b0d-9964-97856a934b93)
+
 
 ## Credits
 
